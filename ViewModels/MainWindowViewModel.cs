@@ -1,6 +1,7 @@
 ﻿using DayzTraderManager.Commands;
 using DayzTraderManager.Helpers;
 using DayzTraderManager.Models;
+using DayzTraderManager.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -239,9 +240,17 @@ namespace DayzTraderManager.ViewModels
         }
 
         public void ExportTraderFile()
-        { 
+        {
+            if (string.IsNullOrEmpty(ExportFilePath))
+                throw new ArgumentException("Can't be empty", "ExportFilePath");
 
+            if (TraderData != null)
+            {
+                var exportManager = new TraderFileExporter(TraderData, ExportFilePath);
+
+                if (!exportManager.ExportFile())
+                    throw new Exception("Export Failed");
+            }
         }
-
     }
 }

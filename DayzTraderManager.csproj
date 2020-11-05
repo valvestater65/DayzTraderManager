@@ -4,6 +4,11 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <Authors>valvestater65</Authors>
+    <Company>valvestater65</Company>
+    <Description>Helps managing your trader prices for DayZ Trader! Mod.</Description>
+    <Version>0.1</Version>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
 
   <ItemGroup>

@@ -83,8 +83,9 @@ namespace DayzTraderManager
             saveFileDialog.Filter = "Text File|*.txt";
 
             if (saveFileDialog.ShowDialog().Value)
-            { 
-
+            {
+                _viewModel.ExportFilePath = saveFileDialog.FileName;
+                _viewModel.ExportTraderFile();
             }
         }
     }
